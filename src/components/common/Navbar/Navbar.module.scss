@@ -1,0 +1,49 @@
+.navbar {
+  width: 100%;
+  background-color: var(--black);
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1875rem 0;
+}
+
+.hamburgerMenu {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (min-width: 75rem) {
+    display: none;
+  }
+}
+
+.logo {
+  display: inline-flex;
+
+  @media (min-width: 48rem) {
+    margin-left: 2.625rem;
+    margin-right: auto;
+  }
+
+  @media (min-width: 75rem) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.cartContainer {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
