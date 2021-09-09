@@ -11,17 +11,17 @@ const NavLinks = () => (
         </Link>
       </li>
       <li className={styles.navLink}>
-        <Link href="/">
+        <Link href="/category/headphones">
           <a>Headphones</a>
         </Link>
       </li>
       <li className={styles.navLink}>
-        <Link href="/">
+        <Link href="/category/speakers">
           <a>Speakers</a>
         </Link>
       </li>
       <li className={styles.navLink}>
-        <Link href="/">
+        <Link href="/category/earphones">
           <a>Earphones</a>
         </Link>
       </li>
