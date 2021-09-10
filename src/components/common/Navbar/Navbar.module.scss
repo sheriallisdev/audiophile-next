@@ -1,3 +1,5 @@
+@use "@styles/mixins" as m;
+
 .navbar {
   width: 100%;
   background-color: var(--black);
@@ -20,7 +22,7 @@
     cursor: pointer;
   }
 
-  @media (min-width: 75rem) {
+  @include m.xl() {
     display: none;
   }
 }
@@ -28,12 +30,12 @@
 .logo {
   display: inline-flex;
 
-  @media (min-width: 48rem) {
+  @include m.md() {
     margin-left: 2.625rem;
     margin-right: auto;
   }
 
-  @media (min-width: 75rem) {
+  @include m.xl() {
     margin-left: 0;
     margin-right: 0;
   }

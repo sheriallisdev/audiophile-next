@@ -1,3 +1,5 @@
+@use "@styles/mixins" as m;
+
 .pageHeader {
   background-color: var(--black);
 }
@@ -10,7 +12,7 @@
   padding: 2rem 1rem;
   letter-spacing: 1.43px;
 
-  @media (min-width: 768px) {
+  @include m.md() {
     padding: 5.375rem 1rem;
   }
 }

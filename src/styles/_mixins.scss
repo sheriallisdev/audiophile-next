@@ -1,0 +1,15 @@
+// Breakpoints
+
+// 768px
+@mixin md() {
+  @media (min-width: 48rem) {
+    @content;
+  }
+}
+
+// 1200px
+@mixin xl() {
+  @media (min-width: 75rem) {
+    @content;
+  }
+}
