@@ -6,7 +6,7 @@ const PageHeader = ({ pageTitle }) => {
   return (
     <header className={styles.pageHeader}>
       <Container>
-        <h2 className={styles.pageTitle}>{pageTitle}</h2>
+        <h1 className={styles.pageTitle}>{pageTitle}</h1>
       </Container>
     </header>
   );

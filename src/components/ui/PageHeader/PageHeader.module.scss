@@ -6,7 +6,11 @@
   color: var(--white);
   text-align: center;
   font-size: 2.5rem;
-  line-height: 1.1;
-  letter-spacing: 1.42857px;
-  padding: 6.125rem 1rem;
+  line-height: 1.666;
+  padding: 2rem 1rem;
+  letter-spacing: 1.43px;
+
+  @media (min-width: 768px) {
+    padding: 5.375rem 1rem;
+  }
 }
