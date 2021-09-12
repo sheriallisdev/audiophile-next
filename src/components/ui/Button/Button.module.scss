@@ -1,0 +1,15 @@
+.primary {
+  background-color: var(--brand-primary);
+  color: var(--white);
+  padding: 15px 30px;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: var(--orange-200);
+  }
+}

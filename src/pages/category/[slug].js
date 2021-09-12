@@ -1,12 +1,14 @@
 import { GraphQLClient } from "graphql-request";
 
 import { PageHeader } from "@components/ui";
+import { ProductPreviewGrid } from "@components/product";
 
 const graphcms = new GraphQLClient(process.env.GRAPHCMS_API);
 
 const Category = ({ category }) => (
   <>
     <PageHeader pageTitle={category.name} />
+    <ProductPreviewGrid products={category.products} />
   </>
 );
 
@@ -17,6 +19,17 @@ export async function getStaticProps({ params }) {
       category(where: { slug: $slug }) {
         name
         slug
+        products(orderBy: isNew_DESC) {
+          name
+          features
+          description
+          mainImage {
+            url
+          }
+          slug
+          id
+          isNew
+        }
       }
     }
   `,
