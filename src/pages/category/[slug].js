@@ -2,45 +2,56 @@ import { GraphQLClient } from "graphql-request";
 
 import { PageHeader } from "@components/ui";
 import { ProductPreviewGrid } from "@components/product";
+import { CategoryGrid } from "@components/common";
 
 const graphcms = new GraphQLClient(process.env.GRAPHCMS_API);
 
-const Category = ({ category }) => (
+const query = `
+query CategoryPageQuery($slug: String!) {
+  category(where: {slug: $slug}) {
+    name
+    slug
+    products(orderBy: isNew_DESC) {
+      name
+      features
+      description
+      mainImage {
+        url
+      }
+      slug
+      id
+      isNew
+    }
+  }
+  categories {
+    name
+    image {
+      url
+    }
+    slug
+  }
+}
+`;
+
+const Category = ({ category, categories }) => (
   <>
     <PageHeader pageTitle={category.name} />
-    <ProductPreviewGrid products={category.products} />
+    <section>
+      <ProductPreviewGrid products={category.products} />
+      <CategoryGrid categories={categories} />
+    </section>
   </>
 );
 
 export async function getStaticProps({ params }) {
-  const { category } = await graphcms.request(
-    `
-    query CategoryPageQuery($slug: String!) {
-      category(where: { slug: $slug }) {
-        name
-        slug
-        products(orderBy: isNew_DESC) {
-          name
-          features
-          description
-          mainImage {
-            url
-          }
-          slug
-          id
-          isNew
-        }
-      }
-    }
-  `,
-    {
-      slug: params.slug,
-    }
-  );
+  const { category, categories } = await graphcms.request(query, {
+    slug: params.slug,
+  });
 
   return {
     props: {
       category,
+      categories,
     },
   };
 }
