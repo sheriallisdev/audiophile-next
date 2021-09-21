@@ -2,31 +2,35 @@ import styles from "./NavLinks.module.scss";
 
 import Link from "next/link";
 
-const NavLinks = () => (
-  <nav className={styles.nav}>
-    <ul className={styles.mainNav}>
-      <li className={styles.navLink}>
-        <Link href="/">
-          <a>Home</a>
+const links = [
+  {
+    name: "Home",
+    slug: "/",
+  },
+  {
+    name: "Headphones",
+    slug: "/category/headphones",
+  },
+  {
+    name: "Speakers",
+    slug: "/category/speakers",
+  },
+  {
+    name: "Earphones",
+    slug: "/category/earphones",
+  },
+];
+
+const NavLinks = ({ className }) => (
+  <ul className={className}>
+    {links.map((link) => (
+      <li className={styles.navLink} key={link.name}>
+        <Link href={link.slug}>
+          <a>{link.name}</a>
         </Link>
       </li>
-      <li className={styles.navLink}>
-        <Link href="/category/headphones">
-          <a>Headphones</a>
-        </Link>
-      </li>
-      <li className={styles.navLink}>
-        <Link href="/category/speakers">
-          <a>Speakers</a>
-        </Link>
-      </li>
-      <li className={styles.navLink}>
-        <Link href="/category/earphones">
-          <a>Earphones</a>
-        </Link>
-      </li>
-    </ul>
-  </nav>
+    ))}
+  </ul>
 );
 
 export default NavLinks;

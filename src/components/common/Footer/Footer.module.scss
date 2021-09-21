@@ -1,0 +1,93 @@
+@use "@styles/mixins" as m;
+
+.siteFooter {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 48px 1rem;
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-areas:
+    "logo"
+    "navigation"
+    "description"
+    "copyright"
+    "socials";
+  justify-items: center;
+  text-align: center;
+
+  @include m.md() {
+    grid-template-areas:
+      "logo logo logo logo"
+      "navigation navigation navigation navigation"
+      "description description description description"
+      "copyright socials socials socials";
+    justify-items: start;
+    text-align: left;
+  }
+
+  @include m.xl() {
+    grid-template-areas:
+      "logo logo navigation navigation"
+      "description description socials socials"
+      "copyright copyright copyright copyright";
+    align-items: center;
+  }
+}
+
+.footerLogo {
+  grid-area: logo;
+}
+
+.footerNav {
+  grid-area: navigation;
+  margin: 24px 0 32px;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  li {
+    margin-left: 0;
+    padding: 1rem;
+
+    @include m.md() {
+      &:first-of-type {
+        padding-left: 0;
+      }
+    }
+  }
+
+  @include m.md() {
+    flex-direction: row;
+  }
+}
+
+.description {
+  grid-area: description;
+  margin-bottom: 48px;
+  opacity: 0.5;
+
+  @include m.xl() {
+    padding-right: 134px;
+  }
+}
+
+.socialsContainer {
+  grid-area: socials;
+
+  @include m.md() {
+    justify-self: end;
+  }
+}
+
+.socialLink {
+  padding: 1em;
+}
+
+.copyright {
+  grid-area: copyright;
+  opacity: 0.5;
+  margin-bottom: 48px;
+}

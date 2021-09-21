@@ -41,6 +41,19 @@
   }
 }
 
+.nav {
+  display: none;
+
+  @include m.xl() {
+    display: flex;
+  }
+}
+
+.mainNav {
+  display: flex;
+  padding-left: 0;
+}
+
 .cartContainer {
   padding: 1rem;
   display: grid;

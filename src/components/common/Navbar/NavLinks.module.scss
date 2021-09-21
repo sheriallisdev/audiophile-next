@@ -1,18 +1,5 @@
 @use "@styles/mixins" as m;
 
-.nav {
-  display: none;
-
-  @include m.xl() {
-    display: flex;
-  }
-}
-
-.mainNav {
-  display: flex;
-  padding-left: 0;
-}
-
 .navLink {
   display: inline-flex;
   color: var(--white);
