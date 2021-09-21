@@ -1,0 +1,56 @@
+@use "@styles/mixins" as m;
+
+.aboutContainer {
+  padding: 120px 1rem;
+
+  @include m.xl() {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 160px 0;
+    grid-gap: 30px;
+  }
+}
+
+.imageContainer {
+  margin-bottom: 40px;
+  min-height: 300px;
+  position: relative;
+
+  img {
+    border-radius: 8px;
+  }
+
+  @include m.xl() {
+    min-height: 588px;
+    margin-bottom: 0;
+    order: 2;
+  }
+}
+
+.tagLine {
+  margin-bottom: 32px;
+  line-height: 1.1428;
+
+  i {
+    font-style: normal;
+    color: var(--brand-primary);
+  }
+
+  @include m.xl() {
+    font-size: 40px;
+    letter-spacing: 1.43px;
+    line-height: 1.1;
+  }
+}
+
+.contentCol {
+  text-align: center;
+
+  @include m.xl() {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 95px;
+  }
+}

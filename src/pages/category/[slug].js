@@ -3,6 +3,7 @@ import { GraphQLClient } from "graphql-request";
 import { PageHeader } from "@components/ui";
 import { ProductPreviewGrid } from "@components/product";
 import { CategoryGrid } from "@components/common";
+import About from "@components/common/About";
 
 const graphcms = new GraphQLClient(process.env.GRAPHCMS_API);
 
@@ -30,21 +31,31 @@ query CategoryPageQuery($slug: String!) {
     }
     slug
   }
+  info(where: {id: "cktsl7960fynm0b605xp188nl"}) {
+    description
+    image {
+      url
+    }
+    tagLine {
+      raw
+    }
+  }
 }
 `;
 
-const Category = ({ category, categories }) => (
+const Category = ({ category, categories, info }) => (
   <>
     <PageHeader pageTitle={category.name} />
     <section>
       <ProductPreviewGrid products={category.products} />
       <CategoryGrid categories={categories} />
+      <About info={info} />
     </section>
   </>
 );
 
 export async function getStaticProps({ params }) {
-  const { category, categories } = await graphcms.request(query, {
+  const { category, categories, info } = await graphcms.request(query, {
     slug: params.slug,
   });
 
@@ -52,6 +63,7 @@ export async function getStaticProps({ params }) {
     props: {
       category,
       categories,
+      info,
     },
   };
 }

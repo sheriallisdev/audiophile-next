@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
+    "@graphcms/rich-text-react-renderer": "^0.3.0",
     "graphql": "^15.5.3",
     "graphql-request": "^3.5.0",
     "next": "11.1.2",
