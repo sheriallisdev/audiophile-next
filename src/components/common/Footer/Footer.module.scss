@@ -16,6 +16,16 @@
     "socials";
   justify-items: center;
   text-align: center;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 4px;
+    background-color: var(--brand-primary);
+    top: -48px;
+  }
 
   @include m.md() {
     grid-template-areas:
