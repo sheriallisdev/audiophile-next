@@ -101,3 +101,11 @@
   opacity: 0.5;
   margin-bottom: 48px;
 }
+
+.icon {
+  fill: var(--white);
+  &:hover,
+  &:focus {
+    fill: var(--brand-primary);
+  }
+}

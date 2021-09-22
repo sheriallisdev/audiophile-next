@@ -27,17 +27,17 @@ const Footer = () => {
         <div className={styles.socialsContainer}>
           <Link href="/">
             <a className={styles.socialLink} aria-label="Visit us on Facebook">
-              <Facebook />
+              <Facebook className={styles.icon} />
             </a>
           </Link>
           <Link href="/">
             <a className={styles.socialLink} aria-label="Visit us on Twitter">
-              <Twitter />
+              <Twitter className={styles.icon} />
             </a>
           </Link>
           <Link href="/">
             <a className={styles.socialLink} aria-label="Visit us on Instagram">
-              <Instagram />
+              <Instagram className={styles.icon} />
             </a>
           </Link>
         </div>
