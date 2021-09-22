@@ -1,0 +1,77 @@
+@use "@styles/mixins" as m;
+
+.categoriesContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0 1rem;
+
+  @include m.md() {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  @include m.xl() {
+    padding: 0;
+  }
+}
+
+.categoryCard {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background-color: var(--gray-200);
+  border-radius: 8px;
+  margin-bottom: 66px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include m.md() {
+    margin-bottom: 0;
+  }
+}
+
+.cardContent {
+  transform: translateY(-50px);
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryTitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.29px;
+  margin-bottom: 1rem;
+}
+
+.imageContainer {
+  position: relative;
+  min-width: 180px;
+  min-height: 180px;
+  margin-bottom: 4px;
+}
+
+.categoryLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: var(--brand-primary);
+  }
+}
+
+.icon {
+  margin-left: 10px;
+}

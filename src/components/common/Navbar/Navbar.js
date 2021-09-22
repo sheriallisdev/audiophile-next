@@ -17,7 +17,12 @@ const Navbar = () => {
             <Logo />
           </a>
         </Link>
-        <NavLinks />
+        <nav className={styles.nav}>
+          <ul className={styles.mainNav}>
+            <NavLinks />
+          </ul>
+        </nav>
+
         <div className={styles.cartContainer}>
           <ShoppingCart />
         </div>

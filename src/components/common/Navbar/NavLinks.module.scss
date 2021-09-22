@@ -1,14 +1,4 @@
-.nav {
-  display: none;
-
-  @media (min-width: 75rem) {
-    display: flex;
-  }
-}
-
-.mainNav {
-  display: flex;
-}
+@use "@styles/mixins" as m;
 
 .navLink {
   display: inline-flex;
