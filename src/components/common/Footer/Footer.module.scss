@@ -3,7 +3,7 @@
 .siteFooter {
   background-color: var(--black);
   color: var(--white);
-  padding: 48px 1rem;
+  padding: 3rem 1rem;
 }
 
 .footerContainer {
@@ -24,7 +24,7 @@
     width: 100px;
     height: 4px;
     background-color: var(--brand-primary);
-    top: -48px;
+    top: -3rem;
   }
 
   @include m.md() {
@@ -52,7 +52,7 @@
 
 .footerNav {
   grid-area: navigation;
-  margin: 24px 0 32px;
+  margin: 1.5rem 0 2rem;
   padding-inline-start: 0;
   display: flex;
   flex-direction: column;
@@ -76,11 +76,11 @@
 
 .description {
   grid-area: description;
-  margin-bottom: 48px;
+  margin-bottom: 3rem;
   opacity: 0.5;
 
   @include m.xl() {
-    padding-right: 134px;
+    padding-right: 8.375rem;
   }
 }
 
@@ -99,7 +99,7 @@
 .copyright {
   grid-area: copyright;
   opacity: 0.5;
-  margin-bottom: 48px;
+  margin-bottom: 3rem;
 }
 
 .icon {

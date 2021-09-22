@@ -1,18 +1,18 @@
 @use "@styles/mixins" as m;
 
 .aboutContainer {
-  padding: 120px 1rem;
+  padding: 7.5rem 1rem;
 
   @include m.xl() {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 160px 0;
-    grid-gap: 30px;
+    padding: 10rem 0;
+    grid-gap: 1.875rem;
   }
 }
 
 .imageContainer {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   min-height: 300px;
   position: relative;
 
@@ -28,7 +28,7 @@
 }
 
 .tagLine {
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   line-height: 1.1428;
 
   i {
@@ -37,7 +37,7 @@
   }
 
   @include m.xl() {
-    font-size: 40px;
+    font-size: 2.5rem;
     letter-spacing: 1.43px;
     line-height: 1.1;
   }
@@ -51,6 +51,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 95px;
+    padding-right: 5.9375rem;
   }
 }
