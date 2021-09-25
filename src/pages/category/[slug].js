@@ -4,6 +4,7 @@ import { PageHeader } from "@components/ui";
 import { ProductPreviewGrid } from "@components/product";
 import { CategoryGrid } from "@components/common";
 import About from "@components/common/About";
+import { NextSeo } from "next-seo";
 
 const graphcms = new GraphQLClient(process.env.GRAPHCMS_API);
 
@@ -45,6 +46,7 @@ query CategoryPageQuery($slug: String!) {
 
 const Category = ({ category, categories, info }) => (
   <>
+    <NextSeo title={category.name} />
     <PageHeader pageTitle={category.name} />
     <section>
       <ProductPreviewGrid products={category.products} />
