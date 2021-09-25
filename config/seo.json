@@ -1,0 +1,14 @@
+{
+  "title": "Audiophile",
+  "titleTemplate": "%s - Audiophile",
+  "defaultTitle": "Audiophile",
+  "description": "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. ",
+  "openGraph": {
+    "title": "Audiophile - Bringing you the best audio gear",
+    "description": "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. ",
+    "type": "website",
+    "locale": "en_IE",
+    "url": "https://audiophile-next.vercel.app/",
+    "site_name": "Audiophile"
+  }
+}

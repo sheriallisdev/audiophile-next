@@ -1,3 +1,4 @@
+export { default as Head } from "./Head";
 export { default as Navbar } from "./Navbar";
 export { NavLinks } from "./Navbar/NavLinks";
 export { default as Layout } from "./Layout";
