@@ -1,4 +1,4 @@
-import { Button } from "@components/ui";
+import { StyledLink } from "@components/ui";
 import Image from "next/image";
 import styles from "./ProductPreview.module.scss";
 
@@ -15,7 +15,7 @@ const ProductPreview = ({ product }) => {
           {isNew && <span className={styles.newProduct}>New Product</span>}
           <h2 className={styles.title}>{name}</h2>
           <p className={styles.description}>{description}</p>
-          <Button href={`/products/${slug}`}>See Product</Button>
+          <StyledLink href={`/product/${slug}`}>See Product</StyledLink>
         </div>
       </div>
     </div>

@@ -6,12 +6,10 @@
   line-height: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: none;
   transition: background-color 0.2s ease-in-out;
 
   &:hover,
   &:focus {
     background-color: var(--orange-200);
-    cursor: pointer;
   }
 }
