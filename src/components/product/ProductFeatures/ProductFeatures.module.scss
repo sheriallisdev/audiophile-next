@@ -1,0 +1,72 @@
+@use "@styles/mixins" as m;
+
+.feauturesContainer {
+  @include m.md() {
+    @include m.grid;
+    grid-column: span 12;
+    padding: 0 1rem;
+  }
+  @include m.xl() {
+    padding: 0;
+  }
+}
+
+.feauturesWrapper {
+  margin-bottom: 88px;
+
+  @include m.md() {
+    grid-column: span 12;
+  }
+
+  @include m.xl() {
+    grid-column: span 7;
+  }
+}
+
+.featuresTitle {
+  margin-bottom: 24px;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.857143px;
+  text-transform: uppercase;
+}
+
+.inTheBox {
+  margin-bottom: 120px;
+
+  @include m.md() {
+    grid-column: span 12;
+    @include m.grid;
+  }
+  @include m.xl() {
+    grid-column: 9 / -1;
+    // @include m.grid;
+  }
+}
+
+.inTheBoxTitle {
+  @include m.md() {
+    grid-column: span 6;
+  }
+  @include m.xl() {
+    grid-column: span 12;
+  }
+}
+
+.includesList {
+  list-style: none;
+  padding-inline-start: 0;
+
+  @include m.md() {
+    grid-column: span 6;
+  }
+  @include m.xl() {
+    grid-column: span 12;
+  }
+}
+
+.includesQuantity {
+  font-weight: 700;
+  color: var(--brand-primary);
+  margin-right: 24px;
+}

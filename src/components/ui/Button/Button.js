@@ -1,12 +1,10 @@
-import Link from "next/link";
-
 import styles from "./Button.module.scss";
 
-const Button = ({ children, href }) => {
+const Button = ({ children, ...props }) => {
   return (
-    <Link href={href}>
-      <a className={styles.primary}>{children}</a>
-    </Link>
+    <button className={styles.primary} {...props}>
+      {children}
+    </button>
   );
 };
 

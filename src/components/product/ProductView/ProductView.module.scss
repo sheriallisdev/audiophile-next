@@ -1,0 +1,44 @@
+@use "@styles/mixins" as m;
+
+.productViewContainer {
+  display: grid;
+  grid-template-columns: 1rem auto 1rem;
+
+  > * {
+    grid-column: 2;
+  }
+
+  @include m.md() {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: min-content;
+    column-gap: 30px;
+
+    > * {
+      grid-column: span 12;
+    }
+  }
+}
+
+.backLink {
+  margin: 16px 0 32px;
+  border: none;
+  background-color: var(--white);
+  width: fit-content;
+  transition: color 0.2s ease-in-out;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    color: var(--brand-primary);
+  }
+
+  @include m.md() {
+    grid-column: span 12;
+    margin: 33px 0 24px;
+    padding: 0 1rem;
+  }
+
+  @include m.xl() {
+    padding: 0;
+  }
+}

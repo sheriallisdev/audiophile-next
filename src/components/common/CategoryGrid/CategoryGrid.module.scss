@@ -6,8 +6,9 @@
   padding: 0 1rem;
 
   @include m.md() {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    // grid-template-columns: repeat(3, 1fr);
+    // gap: 30px;
+    @include m.grid;
   }
 
   @include m.xl() {
@@ -29,6 +30,8 @@
 
   @include m.md() {
     margin-bottom: 0;
+    grid-column: span 4;
+    margin-top: 80px;
   }
 }
 

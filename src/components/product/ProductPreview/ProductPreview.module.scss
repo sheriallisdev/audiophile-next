@@ -5,6 +5,10 @@
   display: grid;
   grid-template-columns: 1fr;
 
+  &:last-child {
+    margin-bottom: 70px;
+  }
+
   @include m.xl() {
     grid-template-columns: 1fr 1fr;
     margin-bottom: 160px;
@@ -92,5 +96,17 @@
 
   @include m.xl() {
     margin-bottom: 40px;
+  }
+}
+
+.categoryGrid {
+  @include m.md() {
+    grid-column: span 12;
+  }
+}
+
+.about {
+  @include m.md() {
+    grid-column: span 12;
   }
 }
