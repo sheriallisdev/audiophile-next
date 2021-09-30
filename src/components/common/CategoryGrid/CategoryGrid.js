@@ -6,9 +6,9 @@ import { Container } from "@components/ui";
 import styles from "./CategoryGrid.module.scss";
 import { ArrowRight } from "@components/icons";
 
-const CategoryGrid = ({ categories }) => {
+const CategoryGrid = ({ categories, ...props }) => {
   return (
-    <Container>
+    <Container {...props}>
       <div className={styles.categoriesContainer}>
         {categories.map((category) => (
           <div className={styles.categoryCard} key={category.name}>

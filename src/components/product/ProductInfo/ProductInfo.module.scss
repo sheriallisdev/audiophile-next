@@ -1,0 +1,73 @@
+@use "@styles/mixins" as m;
+
+.productInfoContainer {
+  margin-bottom: 88px;
+
+  @include m.md() {
+    @include m.grid;
+    grid-column: span 12;
+    padding: 0 1rem;
+  }
+  @include m.xl() {
+    padding: 0;
+  }
+}
+
+.mainImageContainer {
+  position: relative;
+  background-color: var(---gray-200);
+  margin-bottom: 32px;
+
+  @include m.md() {
+    grid-column: span 5;
+    min-height: 480px;
+    background-color: var(--gray-200);
+    display: grid;
+    place-content: center;
+  }
+}
+
+.productContentContainer {
+  @include m.md() {
+    grid-column: 7 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.newProduct {
+  color: var(--brand-primary);
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: inline-flex;
+  margin-bottom: 24px;
+}
+
+.productName {
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+
+  @include m.xl() {
+    font-size: 40px;
+  }
+}
+
+.productDescription {
+  margin-bottom: 24px;
+}
+
+.productPrice {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 1.28571px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.addToCart {
+  display: flex;
+}

@@ -1,0 +1,66 @@
+@use "@styles/mixins" as m;
+
+.otherProducts {
+  margin-top: 120px;
+
+  @include m.md() {
+    grid-column: span 12;
+  }
+}
+
+.cardsContainer {
+  @include m.md() {
+    @include m.grid;
+    padding: 0 1rem;
+  }
+
+  @include m.xl() {
+    padding: 0;
+  }
+}
+
+.otherProductsCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 56px;
+
+  @include m.md() {
+    grid-column: span 4;
+    min-height: 571px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+
+  @include m.md() {
+    margin-bottom: 32px;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  background-color: var(--gray-200);
+  display: grid;
+  place-items: center;
+  height: 120px;
+  position: relative;
+  border-radius: 8px;
+  margin-bottom: 32px;
+
+  @include m.md() {
+    min-height: 318px;
+    margin-bottom: 40px;
+  }
+}
+
+.productName {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 1.71px;
+  margin-bottom: 32px;
+}

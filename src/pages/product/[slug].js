@@ -1,5 +1,6 @@
 import { ProductView } from "@components/product";
 import { GraphQLClient } from "graphql-request";
+import { NextSeo } from "next-seo";
 
 const graphcms = new GraphQLClient(process.env.GRAPHCMS_API);
 
@@ -36,23 +37,42 @@ query ProductPageQuery($slug: String!){
       slug
     }
   }
+  categories {
+    name
+    image {
+      url
+    }
+    slug
+  }
+  info(where: {id: "cktsl7960fynm0b605xp188nl"}) {
+    description
+    image {
+      url
+    }
+    tagLine {
+      raw
+    }
+  }
 }
 `;
 
-const ProductPage = ({ product }) => (
+const ProductPage = ({ product, categories, info }) => (
   <>
-    <ProductView product={product} />
+    <NextSeo title={product.name} />
+    <ProductView product={product} categories={categories} info={info} />
   </>
 );
 
 export async function getStaticProps({ params }) {
-  const { product } = await graphcms.request(query, {
+  const { product, categories, info } = await graphcms.request(query, {
     slug: params.slug,
   });
 
   return {
     props: {
       product,
+      categories,
+      info,
     },
   };
 }
