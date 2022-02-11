@@ -1,5 +1,6 @@
 import { About, CategoryGrid } from "@components/common";
 import { Hero } from "@components/ui";
+import { FeaturedProducts } from "@components/home";
 
 import { GraphQLClient } from "graphql-request";
 const graphcms = new GraphQLClient(process.env.GRAPHCMS_API);
@@ -31,6 +32,7 @@ export default function Home({ categories, info }) {
       <main>
         <Hero />
         <CategoryGrid categories={categories} />
+        <FeaturedProducts />
         <About info={info} />
       </main>
     </div>

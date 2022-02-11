@@ -2,10 +2,12 @@ import Link from "next/link";
 
 import styles from "./StyledLink.module.scss";
 
-const StyledLink = ({ children, href }) => {
+const StyledLink = ({ children, href, ...props }) => {
   return (
     <Link href={href}>
-      <a className={styles.primary}>{children}</a>
+      <a className={styles.primary} {...props}>
+        {children}
+      </a>
     </Link>
   );
 };

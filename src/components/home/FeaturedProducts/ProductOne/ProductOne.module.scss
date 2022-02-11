@@ -1,0 +1,45 @@
+.productCard {
+  background-color: var(--orange-600);
+  text-align: center;
+  color: var(--white);
+  padding: 55px 24px;
+  margin-bottom: 24px;
+}
+
+.imageContainer {
+  width: 45%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.imageContainer::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/home/desktop/pattern-circles.svg");
+  background-size: cover;
+  top: -50%;
+}
+
+.title {
+  margin-top: 2rem;
+  line-height: 40px;
+  letter-spacing: 1.28571px;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 0.75;
+  margin-top: 24px;
+  margin-bottom: 34px;
+}
+
+.styledLink {
+  background-color: var(--black);
+  color: white;
+  padding: 15px 30px;
+}
