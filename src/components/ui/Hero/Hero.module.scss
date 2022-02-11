@@ -3,10 +3,7 @@
 .heroSection {
   background-color: var(--black);
   padding: 0 1rem;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5)
-    ),
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/assets/home/mobile/image-header.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -17,21 +14,20 @@
   margin-bottom: 90px;
 
   @include m.md() {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5)
-      ),
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("/assets/home/tablet/image-header.jpg");
+    background-position: center;
+    background-size: cover;
     min-height: 634px;
     margin-bottom: 66px;
   }
 
   @include m.xl() {
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.5)
-      ),
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("/assets/home/desktop/image-header.jpg");
+    background-size: cover;
+    background-position: right;
+    background-position: left 0% bottom 45%;
     margin-bottom: 90px;
   }
 }
