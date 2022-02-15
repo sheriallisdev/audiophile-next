@@ -1,32 +1,78 @@
+@use "@styles/mixins" as m;
+
 .productCard {
   background-color: var(--orange-600);
-  text-align: center;
   color: var(--white);
   padding: 55px 24px;
   margin-bottom: 24px;
+
+  @include m.xl() {
+    display: flex;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+
+.col-1 {
+  @include m.xl() {
+    width: 60%;
+  }
+}
+
+.col-2 {
+  text-align: center;
+  margin-top: 2rem;
+
+  @include m.md() {
+    margin: 64px 220px;
+  }
+
+  @include m.xl() {
+    display: grid;
+    place-content: center;
+    text-align: left;
+    margin: 133px 95px 124px 0;
+  }
 }
 
 .imageContainer {
   width: 45%;
   margin: 0 auto;
   position: relative;
+
+  @include m.md() {
+    width: 197px;
+  }
+
+  @include m.xl() {
+    width: 410px;
+    transform: translateY(16%);
+  }
 }
 
-.imageContainer::after {
-  position: absolute;
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-image: url("/assets/home/desktop/pattern-circles.svg");
-  background-size: cover;
-  top: -50%;
-}
+// .imageContainer::after {
+//   position: absolute;
+//   content: "";
+//   display: block;
+//   height: 100%;
+//   width: 100%;
+//   background-image: url("/assets/home/desktop/pattern-circles.svg");
+//   background-size: cover;
+//   top: -50%;
+// }
 
 .title {
-  margin-top: 2rem;
   line-height: 40px;
   letter-spacing: 1.28571px;
+
+  @include m.md() {
+    font-size: 56px;
+    line-height: 58px;
+  }
+
+  @include m.xl() {
+    width: 5ch;
+  }
 }
 
 .description {
@@ -36,10 +82,15 @@
   opacity: 0.75;
   margin-top: 24px;
   margin-bottom: 34px;
+
+  @include m.xl() {
+    width: 35ch;
+  }
 }
 
 .styledLink {
   background-color: var(--black);
   color: white;
   padding: 15px 30px;
+  width: fit-content;
 }

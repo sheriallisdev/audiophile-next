@@ -1,4 +1,10 @@
+@use "@styles/mixins" as m;
+
 .container {
   padding: 0 1rem;
   margin-top: 7.5rem;
+
+  @include m.xl() {
+    padding: 0;
+  }
 }

@@ -5,7 +5,7 @@ import styles from "./ProductOne.module.scss";
 const ProductOne = () => {
   return (
     <Card className={styles.productCard}>
-      <div className="col-1">
+      <div className={styles["col-1"]}>
         <div className={styles.imageContainer}>
           <Image
             src={`/assets/home/desktop/image-speaker-zx9.png`}
@@ -14,9 +14,9 @@ const ProductOne = () => {
             alt=""
           />
         </div>
-        <h2 className={styles.title}>ZX9 SPEAKER</h2>
       </div>
-      <div className="col-2">
+      <div className={styles["col-2"]}>
+        <h2 className={styles.title}>ZX9 SPEAKER</h2>
         <p className={styles.description}>
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
