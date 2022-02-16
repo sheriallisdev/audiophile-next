@@ -23,7 +23,7 @@ const ProductOne = () => {
         </p>
         <StyledLink
           href={`/product/xx99-mark-ii-headphones`}
-          className={styles.styledLink}
+          className="secondary"
         >
           See Product
         </StyledLink>

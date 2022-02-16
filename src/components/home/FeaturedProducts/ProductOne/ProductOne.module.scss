@@ -6,10 +6,15 @@
   padding: 55px 24px;
   margin-bottom: 24px;
 
+  @include m.md() {
+    margin-bottom: 32px;
+  }
+
   @include m.xl() {
     display: flex;
     overflow: hidden;
     padding: 0;
+    margin-bottom: 48px;
   }
 }
 
@@ -86,11 +91,4 @@
   @include m.xl() {
     width: 35ch;
   }
-}
-
-.styledLink {
-  background-color: var(--black);
-  color: white;
-  padding: 15px 30px;
-  width: fit-content;
 }
