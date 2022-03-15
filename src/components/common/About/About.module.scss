@@ -3,6 +3,10 @@
 .aboutContainer {
   padding: 7.5rem 1rem;
 
+  @include m.md() {
+    padding: 6rem 1rem;
+  }
+
   @include m.xl() {
     display: grid;
     grid-template-columns: 1fr 1fr;

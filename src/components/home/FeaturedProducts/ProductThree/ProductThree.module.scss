@@ -1,0 +1,46 @@
+@use "@styles/mixins" as m;
+
+.wrapper {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+
+.title {
+  font-size: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.content {
+  padding: 42px 24px;
+
+  @include m.md(){
+    padding: 101px 41px;
+  }
+
+  @include m.xl(){
+    padding-left: 95px;
+  }
+}
+
+.content-card {
+  background-color: var(--gray-200);
+  width: 100%;
+}
+
+.image-card {
+  overflow: hidden;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include m.md(){
+    min-height: 20em;
+  }
+}
+
+ 

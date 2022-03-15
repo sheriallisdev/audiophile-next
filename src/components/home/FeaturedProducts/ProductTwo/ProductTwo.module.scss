@@ -10,8 +10,13 @@
     background-image: url("/assets/home/tablet/image-speaker-zx7.jpg");
   }
 
+  @include m.md(){
+    margin-bottom: 32px;
+  }
+
   @include m.xl() {
     background-image: url("/assets/home/desktop/image-speaker-zx7.jpg");
+    margin-bottom: 48px;
   }
 }
 
