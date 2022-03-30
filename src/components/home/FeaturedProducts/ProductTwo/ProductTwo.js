@@ -6,7 +6,7 @@ const ProductTwo = () => {
     <Card className={styles.productCard}>
       <div className={styles.content}>
         <h2 className={styles.title}>ZX7 Speaker</h2>
-        <StyledLink href={`/product/zx-7-speaker`} className="outline">
+        <StyledLink href={`/product/zx7-speaker`} className="outline">
           See Product
         </StyledLink>
       </div>

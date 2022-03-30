@@ -11,7 +11,10 @@ const ProductThree = () => {
         <Card className={styles["content-card"]}>
           <div className={styles.content}>
             <h2 className={styles.title}>YX1 EARPHONES</h2>
-            <StyledLink href={`/product/zx-7-speaker`} className="outline">
+            <StyledLink
+              href={`/product/yx1-wireless-earphones`}
+              className="outline"
+            >
               See Product
             </StyledLink>
           </div>

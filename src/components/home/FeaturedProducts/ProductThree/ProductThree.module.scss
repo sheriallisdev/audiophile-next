@@ -14,11 +14,11 @@
 .content {
   padding: 42px 24px;
 
-  @include m.md(){
+  @include m.md() {
     padding: 101px 41px;
   }
 
-  @include m.xl(){
+  @include m.xl() {
     padding-left: 95px;
   }
 }
@@ -38,9 +38,7 @@
     object-fit: cover;
   }
 
-  @include m.md(){
+  @include m.md() {
     min-height: 20em;
   }
 }
-
- 
