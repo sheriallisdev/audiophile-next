@@ -21,7 +21,7 @@ const About = ({ info }) => {
             bold: ({ children }) => <strong>{children}</strong>,
           }}
         />
-        <p>{description}</p>
+        <p className={styles.description}>{description}</p>
       </div>
     </Container>
   );

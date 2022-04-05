@@ -1,0 +1,38 @@
+@use "@styles/mixins" as m;
+
+.productCard {
+  margin-bottom: 24px;
+  background-image: url("/assets/home/mobile/image-speaker-zx7.jpg");
+  background-repeat: none;
+  background-size: cover;
+
+  @media (min-width: 444px) {
+    background-image: url("/assets/home/tablet/image-speaker-zx7.jpg");
+  }
+
+  @include m.md(){
+    margin-bottom: 32px;
+  }
+
+  @include m.xl() {
+    background-image: url("/assets/home/desktop/image-speaker-zx7.jpg");
+    margin-bottom: 48px;
+  }
+}
+
+.content {
+  padding: 100px 24px;
+
+  @media (min-width: 640px) {
+    padding: 100px 64px;
+  }
+
+  @include m.xl() {
+    padding: 100px 94px;
+  }
+}
+
+.title {
+  margin-bottom: 32px;
+  font-size: 28px;
+}

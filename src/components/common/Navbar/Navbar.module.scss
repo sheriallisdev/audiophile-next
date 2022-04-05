@@ -3,6 +3,8 @@
 .navbar {
   width: 100%;
   background-color: var(--black);
+  position: relative;
+  z-index: 20;
 }
 
 .navbarContainer {
@@ -11,12 +13,18 @@
   align-items: center;
   padding: 1.1875rem 0;
   border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
+
+  @include m.xl() {
+    padding: 0;
+  }
 }
 
 .hamburgerMenu {
   padding: 1rem;
   display: grid;
   place-items: center;
+  border: none;
+  background-color: var(--black);
 
   &:hover {
     cursor: pointer;
@@ -29,6 +37,7 @@
 
 .logo {
   display: inline-flex;
+  padding: 36px 0;
 
   @include m.md() {
     margin-left: 2.625rem;

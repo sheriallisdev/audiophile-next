@@ -1,15 +1,44 @@
-.primary {
-  background-color: var(--brand-primary);
-  color: var(--white);
+.link {
+  display: inline-flex;
   padding: 15px 30px;
   font-size: 13px;
   line-height: 18px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: background-color 0.2s ease-in-out;
+  width: fit-content;
+  border: 1px solid transparent;
+}
+
+.primary {
+  background-color: var(--brand-primary);
+  color: var(--white);
 
   &:hover,
   &:focus {
     background-color: var(--orange-200);
+  }
+}
+
+.secondary {
+  background-color: var(--black);
+  color: var(--white);
+
+  &:hover,
+  &:focus {
+    background-color: #4c4c4c;
+  }
+}
+
+.outline {
+  border: 1px solid black;
+  color: var(--black);
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    background-color: var(--black);
+    color: var(--white);
   }
 }

@@ -21,7 +21,9 @@ const RelatedProducts = ({ otherProducts }) => {
                 />
               </div>
               <h4 className={styles.productName}>{product.name}</h4>
-              <StyledLink href={product.slug}>See Product</StyledLink>
+              <StyledLink href={product.slug} className="primary">
+                See Product
+              </StyledLink>
             </div>
           ))}
         </div>

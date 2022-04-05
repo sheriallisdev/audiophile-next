@@ -15,7 +15,9 @@ const ProductPreview = ({ product }) => {
           {isNew && <span className={styles.newProduct}>New Product</span>}
           <h2 className={styles.title}>{name}</h2>
           <p className={styles.description}>{description}</p>
-          <StyledLink href={`/product/${slug}`}>See Product</StyledLink>
+          <StyledLink href={`/product/${slug}`} className="primary">
+            See Product
+          </StyledLink>
         </div>
       </div>
     </div>
