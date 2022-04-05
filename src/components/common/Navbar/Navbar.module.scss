@@ -3,6 +3,8 @@
 .navbar {
   width: 100%;
   background-color: var(--black);
+  position: relative;
+  z-index: 20;
 }
 
 .navbarContainer {
@@ -21,6 +23,8 @@
   padding: 1rem;
   display: grid;
   place-items: center;
+  border: none;
+  background-color: var(--black);
 
   &:hover {
     cursor: pointer;
