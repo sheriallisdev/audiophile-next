@@ -7,17 +7,29 @@ import { Logo, Container } from "@components/ui";
 import { ShoppingCart, Hamburger } from "@components/icons";
 import NavLinks from "./NavLinks";
 import { MobileMenu } from "@components/common";
+import { Cart } from "@components/cart";
 
 const Navbar = () => {
   const router = useRouter();
-  const [open, setIsOpen] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [cartIsOpen, setCartIsOpen] = useState(false);
 
   const handleMenuOpen = () => {
-    setIsOpen(!open);
+    setMenuIsOpen(!menuIsOpen);
+    if (cartIsOpen) setCartIsOpen(!cartIsOpen);
+  };
+
+  const handleCartOpen = () => {
+    setCartIsOpen(!cartIsOpen);
+    if (menuIsOpen) setMenuIsOpen(!menuIsOpen);
+  };
+
+  const handleCartClose = () => {
+    setCartIsOpen(false);
   };
 
   useEffect(() => {
-    const handleRouteChange = () => setIsOpen(false);
+    const handleRouteChange = () => setMenuIsOpen(false);
 
     router.events.on("routeChangeStart", handleRouteChange);
 
@@ -43,11 +55,14 @@ const Navbar = () => {
           </nav>
 
           <div className={styles.cartContainer}>
-            <ShoppingCart />
+            <button className={styles.cartMenu} onClick={handleCartOpen}>
+              <ShoppingCart />
+            </button>
           </div>
         </Container>
       </div>
-      {open && <MobileMenu />}
+      {menuIsOpen && <MobileMenu />}
+      {cartIsOpen && <Cart handleCartClose={handleCartClose} />}
     </>
   );
 };

@@ -7,7 +7,7 @@ const MobileMenu = () => {
   return (
     <>
       <Backdrop />
-      <CategoryGrid categories={menuData} className={styles.container} />;
+      <CategoryGrid categories={menuData} className={styles.container} />
     </>
   );
 };
