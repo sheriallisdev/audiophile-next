@@ -1,0 +1,40 @@
+@use "@styles/mixins" as m;
+
+.cartItem {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.image {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+
+.productInfo {
+  text-align: left;
+  flex-grow: 1;
+  margin-left: 1rem;
+
+  @include m.md {
+    margin-right: 3.875rem;
+  }
+}
+
+.name {
+  font-weight: 700;
+}
+
+.price {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--black-faded);
+}
+
+.quantityInput {
+  margin-right: 0;
+}

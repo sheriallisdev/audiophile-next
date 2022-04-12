@@ -13,6 +13,7 @@ body {
   --orange-600: hsla(21, 65%, 57%, 1);
   --orange-200: hsla(22, 93%, 75%, 1);
   --brand-primary: var(--orange-600);
+  --black-faded: hsla(0, 0%, 0%, 0.5);
 }
 
 a {
@@ -22,6 +23,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+main {
+  padding-top: 40px;
 }
 
 // TYPOGRAPHY

@@ -1,0 +1,75 @@
+@use "@styles/mixins" as m;
+
+.cartContainer {
+  position: relative;
+}
+
+.cartCard {
+  position: absolute;
+  z-index: 20;
+  top: 6.25rem;
+  left: 0;
+  right: 0;
+  margin: 1.5rem;
+  background-color: var(--white);
+  padding: 2rem 1.75rem;
+
+  @include m.md {
+    width: fit-content;
+    right: 0;
+    left: auto;
+  }
+}
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  font-size: 0.9375rem;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: underline;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--brand-primary);
+    cursor: pointer;
+  }
+}
+
+.cartQuantity {
+  font-size: 1.125rem;
+  letter-spacing: 1.29px;
+  font-weight: 700;
+}
+
+.productList {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.totalContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.total {
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.totalPrice {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.submitBtn {
+  width: 100%;
+}

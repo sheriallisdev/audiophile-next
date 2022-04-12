@@ -1,23 +1,21 @@
 @use "@styles/mixins" as m;
 
 .container {
-  margin-top: 38px;
-  padding-top: 100px;
-  padding-bottom: 35px;
+  padding-top: 6.25rem;
+  padding-bottom: 2.1875rem;
   border-radius: 0 0 8px 8px;
   position: absolute;
   z-index: 20;
-  top: 100px;
+  top: 6.25rem;
   left: 0;
   right: 0;
-  // bottom: 0;
   background-color: var(--white);
-  
-  @include m.md(){
-    padding-top: 26px;
-    padding-bottom: 76px;
+
+  @include m.md() {
+    padding-top: 1.625rem;
+    padding-bottom: 4.75rem;
   }
-  
+
   @include m.xl() {
     display: none;
   }
