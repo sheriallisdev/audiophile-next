@@ -7,6 +7,12 @@
   border: none;
   background-color: #efefef;
   height: 48px;
+
+  &:hover,
+  &:focus {
+    color: var(--orange-600);
+    cursor: pointer;
+  }
 }
 
 .numberInput {
