@@ -1,7 +1,9 @@
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
+
+import { CartContext } from "@context/CartContext";
 
 import { Logo, Container } from "@components/ui";
 import { ShoppingCart, Hamburger } from "@components/icons";
@@ -12,20 +14,22 @@ import { Cart } from "@components/cart";
 const Navbar = () => {
   const router = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [cartIsOpen, setCartIsOpen] = useState(false);
+  // const [cartIsOpen, setCartIsOpen] = useState(false);
+
+  const cart = useContext(CartContext);
 
   const handleMenuOpen = () => {
     setMenuIsOpen(!menuIsOpen);
-    if (cartIsOpen) setCartIsOpen(!cartIsOpen);
+    if (cart.cartIsOpen) cart.toggleCartOpenState();
   };
 
   const handleCartOpen = () => {
-    setCartIsOpen(!cartIsOpen);
+    cart.toggleCartOpenState();
     if (menuIsOpen) setMenuIsOpen(!menuIsOpen);
   };
 
   const handleCartClose = () => {
-    setCartIsOpen(false);
+    cart.toggleCartOpenState();
   };
 
   useEffect(() => {
@@ -62,7 +66,7 @@ const Navbar = () => {
         </Container>
       </div>
       {menuIsOpen && <MobileMenu />}
-      {cartIsOpen && <Cart handleCartClose={handleCartClose} />}
+      {cart.cartIsOpen && <Cart handleCartClose={handleCartClose} />}
     </>
   );
 };

@@ -8,10 +8,14 @@ export const CartContext = createContext({
   deleteFromCart: () => {},
   removeAllFromCart: () => {},
   getTotalCost: () => {},
+  openCart: () => {},
+  closeCart: () => {},
+  toggleCartOpenState: () => {},
 });
 
 export function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useState([]);
+  const [cartIsOpen, setCartIsOpen] = useState(false);
 
   function getProductQuantity(id) {
     const quantity = cartProducts.find(
@@ -105,6 +109,10 @@ export function CartProvider({ children }) {
     return totalCost;
   }
 
+  function toggleCartOpenState() {
+    setCartIsOpen(!cartIsOpen);
+  }
+
   const contextValue = {
     items: cartProducts,
     getProductQuantity,
@@ -114,8 +122,9 @@ export function CartProvider({ children }) {
     deleteFromCart,
     removeAllFromCart,
     getTotalCost,
+    toggleCartOpenState,
+    cartIsOpen,
   };
-
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
