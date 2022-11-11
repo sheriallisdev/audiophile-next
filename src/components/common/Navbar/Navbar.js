@@ -10,11 +10,11 @@ import { ShoppingCart, Hamburger } from "@components/icons";
 import NavLinks from "./NavLinks";
 import { MobileMenu } from "@components/common";
 import { Cart } from "@components/cart";
+import { Badge } from "@components/cart/Badge/Badge";
 
 const Navbar = () => {
   const router = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  // const [cartIsOpen, setCartIsOpen] = useState(false);
 
   const cart = useContext(CartContext);
 
@@ -61,6 +61,9 @@ const Navbar = () => {
           <div className={styles.cartContainer}>
             <button className={styles.cartMenu} onClick={handleCartOpen}>
               <ShoppingCart />
+              {cart.items.length > 0 && (
+                <Badge cartItemCount={cart.items.length} />
+              )}
             </button>
           </div>
         </Container>
