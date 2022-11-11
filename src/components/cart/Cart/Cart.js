@@ -2,35 +2,13 @@ import styles from "./Cart.module.scss";
 import { Backdrop, Button, Card, Container } from "@components/ui";
 import { CartItem } from "../CartItem/CartItem";
 import { useRouter } from "next/router";
-
-const CART_DATA = [
-  {
-    id: 1,
-    name: "XX99 MK II",
-    quantity: 1,
-    image:
-      "http://localhost:3000/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FdLrcxMEATeWlcEA7oiA0&w=3840&q=75",
-    price: 2999,
-  },
-  {
-    id: 2,
-    name: "XX59",
-    quantity: 2,
-    image:
-      "http://localhost:3000/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FB2buSYrJQdaVm8gk469i&w=3840&q=75",
-    price: 899,
-  },
-  {
-    id: 3,
-    name: "YX1",
-    quantity: 1,
-    image:
-      "http://localhost:3000/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FGtAwShdHTaStlw4XKYzy&w=1080&q=75",
-    price: 599,
-  },
-];
+import { useContext } from "react";
+import { CartContext } from "@context/CartContext";
 
 const Cart = ({ handleCartClose }) => {
+  const cart = useContext(CartContext);
+
+  const CART_DATA = cart.items;
   const cartIsEmpty = CART_DATA.length === 0;
 
   const router = useRouter();
@@ -43,6 +21,7 @@ const Cart = ({ handleCartClose }) => {
 
   const handleRemoveAllItems = (e) => {
     e.preventDefault();
+    cart.removeAllFromCart();
     console.log("remove all items from cart");
   };
 
@@ -63,20 +42,16 @@ const Cart = ({ handleCartClose }) => {
             {!cartIsEmpty && (
               <ul className={styles.productList}>
                 {CART_DATA.map((product) => (
-                  <CartItem
-                    image={product.image}
-                    quantity={product.quantity}
-                    name={product.name}
-                    price={product.price}
-                    key={product.id}
-                  />
+                  <CartItem product={product} key={product.id} />
                 ))}
               </ul>
             )}
             {!cartIsEmpty && (
               <div className={styles.totalContainer}>
                 <p className={styles.total}>Total</p>
-                <p className={styles.totalPrice}>$ 5,396</p>
+                <p
+                  className={styles.totalPrice}
+                >{`$ ${cart.getTotalCost()}`}</p>
               </div>
             )}
             <Button disabled={cartIsEmpty} variant="fullWidth" type="submit">

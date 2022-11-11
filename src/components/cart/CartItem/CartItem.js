@@ -1,15 +1,35 @@
+import { useContext } from "react";
+import { CartContext } from "@context/CartContext";
 import { Quantity } from "@components/ui";
 import styles from "./CartItem.module.scss";
 
-export const CartItem = ({ price, quantity, image, name }) => {
+export const CartItem = ({ product }) => {
+  const { price, quantity, mainImage, name } = product;
+  const cart = useContext(CartContext);
+
+  const handleIncrement = (e) => {
+    e.preventDefault();
+    cart.addOneToCart(product);
+  };
+
+  const handleDecrement = (e) => {
+    e.preventDefault();
+    cart.removeOneFromCart(product);
+  };
+
   return (
     <li className={styles.cartItem}>
-      <img className={styles.image} src={image} alt="" />
+      <img className={styles.image} src={mainImage.url} alt="" />
       <div className={styles.productInfo}>
         <p className={styles.name}>{name}</p>
         <p className={styles.price}>$ {price}</p>
       </div>
-      <Quantity placeholder={quantity} className={styles.quantityInput} />
+      <Quantity
+        placeholder={quantity}
+        onIcrement={handleIncrement}
+        onDecrement={handleDecrement}
+        className={styles.quantityInput}
+      />
     </li>
   );
 };

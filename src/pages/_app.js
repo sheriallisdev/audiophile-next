@@ -5,6 +5,7 @@ import { Layout } from "@components/common";
 
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
+import CartProvider from "@context/CartContext";
 
 const progress = new ProgressBar({
   size: 4,
@@ -19,9 +20,11 @@ Router.events.on("routeChangeError", process.finish);
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <CartProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CartProvider>
   );
 }
 

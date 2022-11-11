@@ -12,6 +12,7 @@ query ProductPageQuery($slug: String!){
     slug
   }
   product(where: {slug: $slug}) {
+    id
     slug
     mainImage {
       url
@@ -86,7 +87,7 @@ export async function getStaticPaths() {
       slug
     }
   }
-  
+
   `);
 
   return {

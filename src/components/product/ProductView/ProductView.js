@@ -11,17 +11,7 @@ import { About, CategoryGrid } from "@components/common";
 import styles from "./ProductView.module.scss";
 
 const ProductView = ({ product, categories, info }) => {
-  const {
-    name,
-    mainImage,
-    isNew,
-    price,
-    description,
-    features,
-    productIncludes,
-    imageGallery,
-    otherProducts,
-  } = product;
+  const { features, productIncludes, imageGallery, otherProducts } = product;
 
   const router = useRouter();
 
@@ -31,13 +21,7 @@ const ProductView = ({ product, categories, info }) => {
         <button className={styles.backLink} onClick={() => router.back()}>
           Go Back
         </button>
-        <ProductInfo
-          name={name}
-          mainImage={mainImage}
-          isNew={isNew}
-          price={price}
-          description={description}
-        />
+        <ProductInfo product={product} />
         <ProductFeatures
           features={features}
           productIncludes={productIncludes}
