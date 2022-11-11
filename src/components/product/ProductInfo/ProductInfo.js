@@ -3,6 +3,9 @@ import { Button, Quantity } from "@components/ui";
 import { CartContext } from "@context/CartContext";
 import { useContext, useState } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import { formatCurrency } from "@utils/formatCurrency";
 
 import styles from "./ProductInfo.module.scss";
@@ -25,6 +28,7 @@ const ProductInfo = ({ product }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     cart.updateCartQuantity(product, quantityToAdd);
+    toast.success(`${product.name} has been added to your cart`);
     setQuantityToAdd(1);
   };
 
@@ -49,6 +53,17 @@ const ProductInfo = ({ product }) => {
           <Button onClick={handleSubmit}>Add to Cart</Button>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };
