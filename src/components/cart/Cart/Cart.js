@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import { useContext } from "react";
 import { CartContext } from "@context/CartContext";
 
+import { formatCurrency } from "@utils/formatCurrency";
+
 const Cart = ({ handleCartClose }) => {
   const cart = useContext(CartContext);
 
@@ -12,6 +14,8 @@ const Cart = ({ handleCartClose }) => {
   const cartIsEmpty = CART_DATA.length === 0;
 
   const router = useRouter();
+
+  const totalCost = cart.getTotalCost();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,9 +53,7 @@ const Cart = ({ handleCartClose }) => {
             {!cartIsEmpty && (
               <div className={styles.totalContainer}>
                 <p className={styles.total}>Total</p>
-                <p
-                  className={styles.totalPrice}
-                >{`$ ${cart.getTotalCost()}`}</p>
+                <p className={styles.totalPrice}>{formatCurrency(totalCost)}</p>
               </div>
             )}
             <Button disabled={cartIsEmpty} variant="fullWidth" type="submit">

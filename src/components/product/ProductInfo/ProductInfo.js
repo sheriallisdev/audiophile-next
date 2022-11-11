@@ -3,6 +3,8 @@ import { Button, Quantity } from "@components/ui";
 import { CartContext } from "@context/CartContext";
 import { useContext, useState } from "react";
 
+import { formatCurrency } from "@utils/formatCurrency";
+
 import styles from "./ProductInfo.module.scss";
 
 const ProductInfo = ({ product }) => {
@@ -37,7 +39,7 @@ const ProductInfo = ({ product }) => {
         )}
         <h1 className={styles.productName}>{product.name}</h1>
         <p className={styles.productDescription}>{product.description}</p>
-        <p className={styles.productPrice}>{`$ ${product.price}`}</p>
+        <p className={styles.productPrice}>{formatCurrency(product.price)}</p>
         <div className={styles.addToCart}>
           <Quantity
             placeholder={quantityToAdd}

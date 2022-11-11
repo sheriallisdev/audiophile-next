@@ -3,6 +3,8 @@ import { CartContext } from "@context/CartContext";
 import { Quantity } from "@components/ui";
 import styles from "./CartItem.module.scss";
 
+import { formatCurrency } from "@utils/formatCurrency";
+
 export const CartItem = ({ product }) => {
   const { price, quantity, mainImage, name } = product;
   const cart = useContext(CartContext);
@@ -22,7 +24,7 @@ export const CartItem = ({ product }) => {
       <img className={styles.image} src={mainImage.url} alt="" />
       <div className={styles.productInfo}>
         <p className={styles.name}>{name}</p>
-        <p className={styles.price}>$ {price}</p>
+        <p className={styles.price}>{formatCurrency(price)}</p>
       </div>
       <Quantity
         placeholder={quantity}
