@@ -13,6 +13,7 @@
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
     "@graphcms/rich-text-react-renderer": "^0.3.0",
+    "formik": "^2.2.9",
     "graphql": "^15.5.3",
     "graphql-request": "^3.5.0",
     "next": "^12.0.10",
