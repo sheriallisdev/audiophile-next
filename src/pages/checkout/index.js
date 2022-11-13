@@ -1,5 +1,167 @@
+import { Formik } from "formik";
+import * as Yup from "yup";
+
+import { Container } from "@components/ui";
+import { FieldSet, TextField } from "@components/checkout";
+import { useRouter } from "next/router";
+
+import styles from "./checkout.module.scss";
+
 const CheckoutPage = () => {
-  return <div>Checkout!</div>;
+  const router = useRouter();
+
+  return (
+    <Container className={styles.checkoutPageContainer}>
+      <button className={styles.backLink} onClick={() => router.back()}>
+        Go Back
+      </button>
+
+      <Container className={styles.detailsContainer}>
+        <h1 className={styles.pageTitle}>Checkout</h1>
+
+        <Formik
+          initialValues={{ email: "" }}
+          onSubmit={async (values) => {
+            await new Promise((resolve) => setTimeout(resolve, 500));
+            alert(JSON.stringify(values, null, 2));
+          }}
+          validationSchema={Yup.object().shape({
+            name: Yup.string().required("Required"),
+            email: Yup.string().email().required("Required"),
+            phone: Yup.string().required("Required"),
+            address: Yup.string().required("Required"),
+            zipcode: Yup.string().required("Required"),
+            city: Yup.string().required("Required"),
+            country: Yup.string().required("Required"),
+          })}
+        >
+          {(props) => {
+            const {
+              values,
+              touched,
+              errors,
+              dirty,
+              isSubmitting,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              handleReset,
+            } = props;
+
+            return (
+              <form onSubmit={handleSubmit}>
+                <FieldSet legend="Billing Details">
+                  <TextField
+                    label="Name"
+                    id="name"
+                    placeholder="Enter your name"
+                    value={values.name}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.name && touched.name}
+                  />
+                  {errors.name && touched.name && (
+                    <div className="input-feedback">{errors.address}</div>
+                  )}
+
+                  <TextField
+                    label="Email Address"
+                    id="email"
+                    placeholder="Enter your email"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.email && touched.email}
+                  />
+                  {errors.email && touched.email && (
+                    <div className="input-feedback">{errors.email}</div>
+                  )}
+
+                  <TextField
+                    label="Phone Number"
+                    id="phone"
+                    placeholder="Enter your phone"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.email && touched.email}
+                  />
+                  {errors.email && touched.email && (
+                    <div className="input-feedback">{errors.email}</div>
+                  )}
+                </FieldSet>
+
+                <FieldSet legend="Shipping Info">
+                  <TextField
+                    label="Your Address"
+                    id="address"
+                    placeholder="Enter your address"
+                    value={values.adress}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.address && touched.address}
+                  />
+                  {errors.address && touched.address && (
+                    <div className="input-feedback">{errors.address}</div>
+                  )}
+
+                  <TextField
+                    label="ZIP Code"
+                    id="zipcode"
+                    placeholder="Enter your zipcode"
+                    value={values.zipcode}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.zipcode && touched.zipcode}
+                  />
+                  {errors.zipcode && touched.zipcode && (
+                    <div className="input-feedback">{errors.zipcode}</div>
+                  )}
+
+                  <TextField
+                    label="City"
+                    id="city"
+                    placeholder="Enter your city"
+                    value={values.city}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.city && touched.city}
+                  />
+                  {errors.city && touched.city && (
+                    <div className="input-feedback">{errors.city}</div>
+                  )}
+
+                  <TextField
+                    label="Country"
+                    id="country"
+                    placeholder="Enter your country"
+                    value={values.country}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    error={errors.country && touched.country}
+                  />
+                  {errors.country && touched.country && (
+                    <div className="input-feedback">{errors.country}</div>
+                  )}
+                </FieldSet>
+                <button
+                  type="button"
+                  className="outline"
+                  onClick={handleReset}
+                  disabled={!dirty || isSubmitting}
+                >
+                  Reset
+                </button>
+                <button type="submit" disabled={isSubmitting}>
+                  Submit
+                </button>
+              </form>
+            );
+          }}
+        </Formik>
+      </Container>
+    </Container>
+  );
 };
 
 export default CheckoutPage;
