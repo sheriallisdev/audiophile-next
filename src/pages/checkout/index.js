@@ -1,4 +1,4 @@
-import { Formik } from "formik";
+import { Formik, Field } from "formik";
 import * as Yup from "yup";
 
 import { Container } from "@components/ui";
@@ -144,6 +144,64 @@ const CheckoutPage = () => {
                     <div className="input-feedback">{errors.country}</div>
                   )}
                 </FieldSet>
+
+                <FieldSet legend="Payment Details">
+                  <div
+                    id="payment-method-group"
+                    className={styles.paymentMethodTitle}
+                  >
+                    Payment Method
+                  </div>
+                  <div
+                    role="group"
+                    aria-labelledby="payment-method-group"
+                  ></div>
+                  <div>
+                    <label>
+                      <Field type="radio" name="picked" value="emoney" />
+                      e-Money
+                    </label>
+                  </div>
+                  <div>
+                    <label>
+                      <Field
+                        type="radio"
+                        name="picked"
+                        value="cashondelivery"
+                      />
+                      Cash on Delivery
+                    </label>
+                  </div>
+                  {values.picked === "emoney" ? (
+                    <div>
+                      <TextField
+                        label="e-Money Number"
+                        id="emoneynumber"
+                        placeholder="238521993"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        error={errors.emoneynumber && touched.emoneynumber}
+                      />
+                      {errors.emoneynumber && touched.emoneynumber && (
+                        <div className="input-feedback">
+                          {errors.emoneynumber}
+                        </div>
+                      )}
+                      <TextField
+                        label="e-Money PIN"
+                        id="emoneypin"
+                        placeholder="6891"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        error={errors.emoneypin && touched.emoneypin}
+                      />
+                      {errors.emoneypin && touched.emoneypin && (
+                        <div className="input-feedback">{errors.emoneypin}</div>
+                      )}
+                    </div>
+                  ) : null}
+                </FieldSet>
+
                 <button
                   type="button"
                   className="outline"
