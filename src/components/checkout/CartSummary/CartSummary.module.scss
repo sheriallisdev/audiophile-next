@@ -1,0 +1,72 @@
+.title {
+  font-size: 1.125rem;
+  line-height: 1.3888;
+  letter-spacing: 1.28571px;
+}
+
+.summaryItemContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.image {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+
+.description {
+  margin-right: auto;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 0.875rem;
+  opacity: 50%;
+}
+
+.quantity {
+  opacity: 50%;
+}
+
+.pricingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+
+  &:last-child {
+    margin-top: 1.5rem;
+  }
+}
+
+.pricingRowLabel {
+  font-size: 0.875rem;
+  opacity: 50%;
+}
+
+.pricingRowAmount {
+  font-weight: 700;
+}
+
+.grandTotal {
+  font-weight: 700;
+  color: var(--orange-600);
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
