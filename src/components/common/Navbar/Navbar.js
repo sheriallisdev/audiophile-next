@@ -5,12 +5,14 @@ import { useRouter } from "next/router";
 
 import { CartContext } from "@context/CartContext";
 
-import { Logo, Container } from "@components/ui";
+import { Logo, Container, Backdrop } from "@components/ui";
 import { ShoppingCart, Hamburger } from "@components/icons";
 import NavLinks from "./NavLinks";
 import { MobileMenu } from "@components/common";
 import { Cart } from "@components/cart";
 import { Badge } from "@components/cart/Badge/Badge";
+
+import { Dialog } from "@headlessui/react";
 
 const Navbar = () => {
   const router = useRouter();
@@ -20,16 +22,20 @@ const Navbar = () => {
 
   const handleMenuOpen = () => {
     setMenuIsOpen(!menuIsOpen);
-    if (cart.cartIsOpen) cart.toggleCartOpenState();
+    if (cart.cartIsOpen) cart.closeCart();
+  };
+
+  const handleMenuClose = () => {
+    setMenuIsOpen(false);
   };
 
   const handleCartOpen = () => {
-    cart.toggleCartOpenState();
+    cart.openCart();
     if (menuIsOpen) setMenuIsOpen(!menuIsOpen);
   };
 
   const handleCartClose = () => {
-    cart.toggleCartOpenState();
+    cart.closeCart();
   };
 
   useEffect(() => {
@@ -59,7 +65,10 @@ const Navbar = () => {
           </nav>
 
           <div className={styles.cartContainer}>
-            <button className={styles.cartMenu} onClick={handleCartOpen}>
+            <button
+              className={styles.cartMenu}
+              onClick={cart.cartIsOpen ? handleCartClose : handleCartOpen}
+            >
               <ShoppingCart />
               {cart.items.length > 0 && (
                 <Badge cartItemCount={cart.items.length} />
@@ -68,8 +77,38 @@ const Navbar = () => {
           </div>
         </Container>
       </div>
-      {menuIsOpen && <MobileMenu />}
-      {cart.cartIsOpen && <Cart handleCartClose={handleCartClose} />}
+      <Dialog
+        open={menuIsOpen}
+        onClose={handleMenuClose}
+        style={{
+          position: "absolute",
+          top: "0",
+          left: "0",
+          zIndex: "999",
+          width: "100%",
+        }}
+      >
+        <Backdrop aria-hidden="true" />
+        <Dialog.Panel>
+          <MobileMenu />
+        </Dialog.Panel>
+      </Dialog>
+
+      <Dialog
+        open={cart.cartIsOpen}
+        onClose={handleCartClose}
+        style={{
+          position: "absolute",
+          top: "98px",
+          right: "0",
+          width: "100%",
+        }}
+      >
+        <Backdrop aria-hidden="true" />
+        <Dialog.Panel>
+          <Cart handleCartClose={handleCartClose} />
+        </Dialog.Panel>
+      </Dialog>
     </>
   );
 };

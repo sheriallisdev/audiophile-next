@@ -113,6 +113,14 @@ export function CartProvider({ children }) {
     setCartIsOpen(!cartIsOpen);
   }
 
+  function openCart() {
+    setCartIsOpen(true);
+  }
+
+  function closeCart() {
+    setCartIsOpen(false);
+  }
+
   const contextValue = {
     items: cartProducts,
     getProductQuantity,
@@ -124,6 +132,8 @@ export function CartProvider({ children }) {
     getTotalCost,
     toggleCartOpenState,
     cartIsOpen,
+    closeCart,
+    openCart,
   };
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
