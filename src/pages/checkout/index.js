@@ -1,8 +1,8 @@
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 
-import { Container } from "@components/ui";
-import { FieldSet, TextField } from "@components/checkout";
+import { Button, Container } from "@components/ui";
+import { CartSummary, FieldSet, TextField } from "@components/checkout";
 import { useRouter } from "next/router";
 
 import styles from "./checkout.module.scss";
@@ -16,40 +16,37 @@ const CheckoutPage = () => {
         Go Back
       </button>
 
-      <Container className={styles.detailsContainer}>
-        <h1 className={styles.pageTitle}>Checkout</h1>
+      <Formik
+        initialValues={{ email: "" }}
+        onSubmit={async (values) => {
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          alert(JSON.stringify(values, null, 2));
+        }}
+        validationSchema={Yup.object().shape({
+          name: Yup.string().required("Required"),
+          email: Yup.string().email().required("Required"),
+          phone: Yup.string().required("Required"),
+          address: Yup.string().required("Required"),
+          zipcode: Yup.string().required("Required"),
+          city: Yup.string().required("Required"),
+          country: Yup.string().required("Required"),
+        })}
+      >
+        {(props) => {
+          const {
+            values,
+            touched,
+            errors,
+            isSubmitting,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+          } = props;
 
-        <Formik
-          initialValues={{ email: "" }}
-          onSubmit={async (values) => {
-            await new Promise((resolve) => setTimeout(resolve, 500));
-            alert(JSON.stringify(values, null, 2));
-          }}
-          validationSchema={Yup.object().shape({
-            name: Yup.string().required("Required"),
-            email: Yup.string().email().required("Required"),
-            phone: Yup.string().required("Required"),
-            address: Yup.string().required("Required"),
-            zipcode: Yup.string().required("Required"),
-            city: Yup.string().required("Required"),
-            country: Yup.string().required("Required"),
-          })}
-        >
-          {(props) => {
-            const {
-              values,
-              touched,
-              errors,
-              dirty,
-              isSubmitting,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              handleReset,
-            } = props;
-
-            return (
-              <form onSubmit={handleSubmit}>
+          return (
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <Container className={styles.detailsContainer}>
+                <h1 className={styles.pageTitle}>Checkout</h1>
                 <FieldSet legend="Billing Details">
                   <TextField
                     label="Name"
@@ -81,13 +78,13 @@ const CheckoutPage = () => {
                     label="Phone Number"
                     id="phone"
                     placeholder="Enter your phone"
-                    value={values.email}
+                    value={values.phone}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    error={errors.email && touched.email}
+                    error={errors.phone && touched.phone}
                   />
-                  {errors.email && touched.email && (
-                    <div className="input-feedback">{errors.email}</div>
+                  {errors.phone && touched.phone && (
+                    <div className="input-feedback">{errors.phone}</div>
                   )}
                 </FieldSet>
 
@@ -201,23 +198,23 @@ const CheckoutPage = () => {
                     </div>
                   ) : null}
                 </FieldSet>
+              </Container>
 
-                <button
-                  type="button"
-                  className="outline"
-                  onClick={handleReset}
-                  disabled={!dirty || isSubmitting}
+              <Container className={styles.summartContainer}>
+                <CartSummary />
+
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  variant="fullWidth"
                 >
-                  Reset
-                </button>
-                <button type="submit" disabled={isSubmitting}>
-                  Submit
-                </button>
-              </form>
-            );
-          }}
-        </Formik>
-      </Container>
+                  Continue & Pay
+                </Button>
+              </Container>
+            </form>
+          );
+        }}
+      </Formik>
     </Container>
   );
 };

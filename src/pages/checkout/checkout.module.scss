@@ -31,3 +31,16 @@
   font-weight: 700;
   font-size: 0.75rem;
 }
+
+.detailsContainer {
+  @include m.xl {
+    padding-right: 3rem;
+  }
+}
+
+.form {
+  @include m.xl {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
