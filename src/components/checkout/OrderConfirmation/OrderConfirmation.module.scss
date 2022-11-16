@@ -1,0 +1,99 @@
+.container {
+  position: relative;
+  background-color: var(--white);
+  padding: 3rem;
+  z-index: 50;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.infotext {
+  opacity: 50%;
+  margin-bottom: 2rem;
+}
+
+.productInfoContainer {
+  background-color: #f1f1f1;
+  border-radius: 8px 0 0 8px;
+  padding: 1.5rem;
+}
+
+.summaryItemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #979797;
+  padding-bottom: 0.75rem;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.description {
+  margin-right: auto;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 0.875rem;
+  opacity: 50%;
+}
+
+.quantity {
+  opacity: 50%;
+  padding-left: 2rem;
+}
+
+.additionalItems {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  opacity: 50%;
+}
+
+.orderDetails {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  margin-bottom: 2.876rem;
+}
+
+.priceInfoContainer {
+  color: white;
+  background-color: black;
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.priceLabel {
+  text-transform: uppercase;
+  opacity: 50%;
+}
+
+.priceAmount {
+}

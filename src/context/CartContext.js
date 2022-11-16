@@ -11,11 +11,14 @@ export const CartContext = createContext({
   openCart: () => {},
   closeCart: () => {},
   toggleCartOpenState: () => {},
+  getGrandTotal: () => {},
 });
 
 export function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useState([]);
   const [cartIsOpen, setCartIsOpen] = useState(false);
+
+  const SHIPPING = 50;
 
   function getProductQuantity(id) {
     const quantity = cartProducts.find(
@@ -121,6 +124,10 @@ export function CartProvider({ children }) {
     setCartIsOpen(false);
   }
 
+  function getGrandTotal() {
+    return getTotalCost() + SHIPPING;
+  }
+
   const contextValue = {
     items: cartProducts,
     getProductQuantity,
@@ -134,6 +141,7 @@ export function CartProvider({ children }) {
     cartIsOpen,
     closeCart,
     openCart,
+    getGrandTotal,
   };
   return (
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
