@@ -55,8 +55,8 @@ const ProductInfo = ({ product }) => {
       </div>
       <ToastContainer
         position="top-right"
-        autoClose={2000}
-        hideProgressBar={false}
+        autoClose={1300}
+        hideProgressBar={true}
         newestOnTop={false}
         closeOnClick
         rtl={false}
