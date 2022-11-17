@@ -1,14 +1,32 @@
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 
-import { Button, Container } from "@components/ui";
-import { CartSummary, FieldSet, TextField } from "@components/checkout";
+import { Backdrop, Button, Container } from "@components/ui";
+import {
+  CartSummary,
+  FieldSet,
+  OrderConfirmation,
+  TextField,
+} from "@components/checkout";
 import { useRouter } from "next/router";
 
 import styles from "./checkout.module.scss";
+import { useState, useContext } from "react";
+import { CartContext } from "@context/CartContext";
+
+import { Dialog } from "@headlessui/react";
 
 const CheckoutPage = () => {
   const router = useRouter();
+  const [orderIsComplete, setOrderIsComplete] = useState(false);
+
+  const cart = useContext(CartContext);
+
+  const handleOrderConfirmationClose = () => {
+    setOrderIsComplete(false);
+    cart.removeAllFromCart();
+    router.push("/");
+  };
 
   return (
     <Container className={styles.checkoutPageContainer}>
@@ -18,9 +36,9 @@ const CheckoutPage = () => {
 
       <Formik
         initialValues={{ email: "" }}
-        onSubmit={async (values) => {
+        onSubmit={async () => {
           await new Promise((resolve) => setTimeout(resolve, 500));
-          alert(JSON.stringify(values, null, 2));
+          setOrderIsComplete(true);
         }}
         validationSchema={Yup.object().shape({
           name: Yup.string().required("Required"),
@@ -215,6 +233,25 @@ const CheckoutPage = () => {
           );
         }}
       </Formik>
+      <Dialog
+        open={orderIsComplete}
+        onClose={handleOrderConfirmationClose}
+        style={{
+          position: "absolute",
+          top: "0",
+          left: "0",
+          zIndex: "999",
+          width: "100%",
+          minHeight: "100vh",
+          display: "grid",
+          placeContent: "center",
+        }}
+      >
+        <Backdrop aria-hidden="true" />
+        <Dialog.Panel>
+          <OrderConfirmation />
+        </Dialog.Panel>
+      </Dialog>
     </Container>
   );
 };

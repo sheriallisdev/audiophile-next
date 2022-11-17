@@ -14,7 +14,7 @@ const CartSummary = () => {
 
   const VAT = total * 0.2;
 
-  const GRAND_TOTAL = total + SHIPPING;
+  const GRAND_TOTAL = cart.getGrandTotal();
 
   return (
     <>
