@@ -11,13 +11,22 @@ import {
 import { useRouter } from "next/router";
 
 import styles from "./checkout.module.scss";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "@context/CartContext";
 
 import { Dialog } from "@headlessui/react";
 
 const CheckoutPage = () => {
   const router = useRouter();
   const [orderIsComplete, setOrderIsComplete] = useState(false);
+
+  const cart = useContext(CartContext);
+
+  const handleOrderConfirmationClose = () => {
+    setOrderIsComplete(false);
+    cart.removeAllFromCart();
+    router.push("/");
+  };
 
   return (
     <Container className={styles.checkoutPageContainer}>
@@ -226,7 +235,7 @@ const CheckoutPage = () => {
       </Formik>
       <Dialog
         open={orderIsComplete}
-        onClose={() => setOrderIsComplete(false)}
+        onClose={handleOrderConfirmationClose}
         style={{
           position: "absolute",
           top: "0",
