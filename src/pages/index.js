@@ -28,14 +28,12 @@ const query = `
 
 export default function Home({ categories, info }) {
   return (
-    <div>
-      <main>
-        <Hero />
-        <CategoryGrid categories={categories} />
-        <FeaturedProducts />
-        <About info={info} />
-      </main>
-    </div>
+    <>
+      <Hero />
+      <CategoryGrid categories={categories} />
+      <FeaturedProducts />
+      <About info={info} />
+    </>
   );
 }
 
