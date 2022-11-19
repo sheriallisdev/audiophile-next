@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/ecommerce-site-built-with-nextjs-graphcms-graphql-formik-51h2UUo4Bq)
 - Live Site URL: [https://audiophile-next.vercel.app/](https://audiophile-next.vercel.app/)
 
 ## My process
