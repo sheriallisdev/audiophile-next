@@ -1,0 +1,13 @@
+@use "@styles/mixins" as m;
+
+.productGridContainer {
+  padding: 4rem 1rem;
+
+  @include m.md() {
+    padding: 7.5rem 2.5rem 50px;
+  }
+
+  @include m.xl() {
+    padding: 10rem 0 50px;
+  }
+}

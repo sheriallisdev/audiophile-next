@@ -1,0 +1,26 @@
+@use "@styles/mixins" as m;
+
+.navLink {
+  display: inline-flex;
+  color: var(--white);
+  list-style: none;
+  text-transform: uppercase;
+  margin-left: 2.125rem;
+  padding-inline-start: 0;
+  font-size: 0.8125rem;
+  letter-spacing: 2px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  a {
+    transition: color 0.2s ease-in-out;
+    padding: 20px 0;
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--brand-primary);
+  }
+}

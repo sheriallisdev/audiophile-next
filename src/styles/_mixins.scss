@@ -1,0 +1,35 @@
+// Breakpoints
+
+// 768px
+@mixin md() {
+  @media (min-width: 48rem) {
+    @content;
+  }
+}
+
+// 1200px
+@mixin xl() {
+  @media (min-width: 75rem) {
+    @content;
+  }
+}
+
+// Grid
+
+@mixin grid() {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: min-content;
+  column-gap: 30px;
+}
+
+// Buttons
+@mixin button {
+  display: inline-flex;
+  padding: 15px 30px;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease-in-out;
+}

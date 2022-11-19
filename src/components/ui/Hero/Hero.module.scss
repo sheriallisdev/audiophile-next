@@ -1,0 +1,87 @@
+@use "@styles/mixins" as m;
+
+.heroSection {
+  background-color: var(--black);
+  padding: 0 1rem;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/home/mobile/image-header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  min-height: 508px;
+  margin-bottom: 90px;
+
+  @include m.md() {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/assets/home/tablet/image-header.jpg");
+    background-position: center;
+    background-size: cover;
+    min-height: 634px;
+    margin-bottom: 66px;
+  }
+
+  @include m.xl() {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/assets/home/desktop/image-header.jpg");
+    background-size: cover;
+    background-position: right;
+    background-position: left 0% bottom 45%;
+    margin-bottom: 90px;
+  }
+}
+
+.heroSectionContainer {
+  color: var(--white);
+
+  @include m.xl() {
+    @include m.grid;
+  }
+}
+
+.newProduct {
+  display: inline-flex;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+
+  @include m.xl() {
+    margin-bottom: 24px;
+  }
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 24px;
+
+  @include m.md() {
+    font-size: 56px;
+  }
+}
+
+.description {
+  opacity: 0.75;
+  margin-bottom: 28px;
+
+  @include m.md() {
+    margin-bottom: 40px;
+  }
+}
+
+.content {
+  text-align: center;
+
+  @include m.md() {
+    padding: 0 150px;
+  }
+
+  @include m.xl() {
+    grid-column: span 5;
+    text-align: left;
+    padding: 0;
+  }
+}

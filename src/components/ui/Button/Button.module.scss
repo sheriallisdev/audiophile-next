@@ -1,0 +1,25 @@
+.primary {
+  background-color: var(--brand-primary);
+  color: var(--white);
+  display: inline-flex;
+  padding: 0.9375rem 1.875rem;
+  font-size: 0.8125rem;
+  line-height: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s ease-in-out;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease-in-out;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    background-color: var(--orange-200);
+    cursor: pointer;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}

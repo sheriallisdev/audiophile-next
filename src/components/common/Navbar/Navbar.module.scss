@@ -1,0 +1,80 @@
+@use "@styles/mixins" as m;
+
+.navbar {
+  width: 100%;
+  background-color: var(--black);
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px rgba(255, 255, 255, 0.2) solid;
+}
+
+.hamburgerMenu {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  border: none;
+  background-color: var(--black);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include m.xl() {
+    display: none;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  padding: 36px 0;
+
+  @include m.md() {
+    margin-left: 2.625rem;
+    margin-right: auto;
+  }
+
+  @include m.xl() {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.nav {
+  display: none;
+
+  @include m.xl() {
+    display: flex;
+  }
+}
+
+.mainNav {
+  display: flex;
+  padding-left: 0;
+}
+
+.cartContainer {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cartMenu {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  border: none;
+  background-color: var(--black);
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

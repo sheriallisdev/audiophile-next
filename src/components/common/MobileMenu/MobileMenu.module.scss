@@ -1,0 +1,22 @@
+@use "@styles/mixins" as m;
+
+.container {
+  padding-top: 6.25rem;
+  padding-bottom: 2.1875rem;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  z-index: 20;
+  top: 6.25rem;
+  left: 0;
+  right: 0;
+  background-color: var(--white);
+
+  @include m.md() {
+    padding-top: 1.625rem;
+    padding-bottom: 4.75rem;
+  }
+
+  @include m.xl() {
+    display: none;
+  }
+}

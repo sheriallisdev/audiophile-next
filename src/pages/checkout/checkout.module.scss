@@ -1,0 +1,46 @@
+@use "@styles/mixins" as m;
+
+.backLink {
+  margin: 16px 0 32px;
+  border: none;
+  background-color: var(--white);
+  width: fit-content;
+  transition: color 0.2s ease-in-out;
+  padding-left: 0;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    color: var(--brand-primary);
+  }
+}
+
+.checkoutPageContainer {
+  padding: 1.5rem;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  line-height: 1.125;
+  letter-spacing: 1.14286px;
+  margin-bottom: 2rem;
+}
+
+.paymentMethodTitle {
+  margin-top: 1rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.detailsContainer {
+  @include m.xl {
+    padding-right: 3rem;
+  }
+}
+
+.form {
+  @include m.xl {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}

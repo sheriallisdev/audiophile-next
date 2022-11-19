@@ -1,0 +1,64 @@
+@use "@styles/mixins" as m;
+
+.aboutContainer {
+  padding: 7.5rem 1rem;
+
+  @include m.md() {
+    padding: 6rem 1rem;
+  }
+
+  @include m.xl() {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10rem 0;
+    grid-gap: 1.875rem;
+  }
+}
+
+.imageContainer {
+  margin-bottom: 2.5rem;
+  min-height: 300px;
+  position: relative;
+
+  img {
+    border-radius: 8px;
+  }
+
+  @include m.xl() {
+    min-height: 588px;
+    margin-bottom: 0;
+    order: 2;
+  }
+}
+
+.tagLine {
+  margin-bottom: 2rem;
+  line-height: 1.1428;
+
+  i {
+    font-style: normal;
+    color: var(--brand-primary);
+  }
+
+  @include m.xl() {
+    font-size: 2.5rem;
+    letter-spacing: 1.43px;
+    line-height: 1.1;
+  }
+}
+
+.contentCol {
+  text-align: center;
+
+  @include m.xl() {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 5.9375rem;
+  }
+}
+
+.description {
+  opacity: 0.7;
+}

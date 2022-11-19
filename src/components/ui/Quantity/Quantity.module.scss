@@ -1,0 +1,33 @@
+.quantityContainer {
+  margin-right: 16px;
+}
+
+.inputAction {
+  width: 48px;
+  border: none;
+  background-color: #efefef;
+  height: 48px;
+
+  &:hover,
+  &:focus {
+    color: var(--orange-600);
+    cursor: pointer;
+  }
+}
+
+.numberInput {
+  width: 48px;
+  text-align: center;
+  border: none;
+  background-color: #efefef;
+  height: 48px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

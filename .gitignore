@@ -32,3 +32,8 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# ESLint
+.eslintcache
+# Local Netlify folder
+.netlify
