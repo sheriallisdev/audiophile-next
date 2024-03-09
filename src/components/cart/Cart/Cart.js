@@ -33,12 +33,14 @@ const Cart = ({ handleCartClose }) => {
       <Card className={styles.cartCard}>
         <header className={styles.cartHeader}>
           <p className={styles.cartQuantity}>CART ({CART_DATA.length}) </p>
-          <button
-            className={styles.removeButton}
-            onClick={handleRemoveAllItems}
-          >
-            Remove all
-          </button>
+          {!cartIsEmpty && (
+            <button
+              className={styles.removeButton}
+              onClick={handleRemoveAllItems}
+            >
+              Remove all
+            </button>
+          )}
         </header>
         <form className={styles.form} onSubmit={handleSubmit}>
           {!cartIsEmpty && (

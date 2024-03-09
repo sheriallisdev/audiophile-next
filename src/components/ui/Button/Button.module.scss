@@ -18,6 +18,11 @@
     background-color: var(--orange-200);
     cursor: pointer;
   }
+
+  &:disabled {
+    background-color: gray;
+    cursor: auto;
+  }
 }
 
 .fullWidth {
