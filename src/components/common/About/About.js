@@ -1,5 +1,5 @@
 import { RichText } from "@graphcms/rich-text-react-renderer";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Container } from "@components/ui";
 import styles from "./About.module.scss";
 

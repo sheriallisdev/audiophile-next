@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Button, Quantity } from "@components/ui";
 import { CartContext } from "@context/CartContext";
 import { useContext, useState } from "react";

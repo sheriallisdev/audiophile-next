@@ -1,5 +1,5 @@
 import { StyledLink } from "@components/ui";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./ProductPreview.module.scss";
 
 const ProductPreview = ({ product }) => {
