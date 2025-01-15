@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "./ProductGallery.module.scss";
 
 const ProductGallery = ({ imageGallery }) => {
@@ -9,10 +9,13 @@ const ProductGallery = ({ imageGallery }) => {
           <Image
             key={index}
             src={image.url}
-            layout="fill"
-            objectFit="cover"
             alt=""
             className={styles.galleryImage}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
           />
         </div>
       ))}

@@ -1,5 +1,5 @@
 import { StyledLink } from "@components/ui";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "./ProductPreview.module.scss";
 
 const ProductPreview = ({ product }) => {
@@ -8,7 +8,16 @@ const ProductPreview = ({ product }) => {
   return (
     <div className={styles.previewContainer}>
       <div className={styles.mediaCol}>
-        <Image src={mainImage.url} width={500} height={500} alt="" />
+        <Image
+          src={mainImage.url}
+          width={500}
+          height={500}
+          alt=""
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
+        />
       </div>
       <div className={styles.contentCol}>
         <div className={styles.contentContainer}>

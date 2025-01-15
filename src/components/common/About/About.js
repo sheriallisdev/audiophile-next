@@ -1,5 +1,5 @@
 import { RichText } from "@graphcms/rich-text-react-renderer";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Container } from "@components/ui";
 import styles from "./About.module.scss";
 
@@ -9,7 +9,15 @@ const About = ({ info }) => {
   return (
     <Container className={styles.aboutContainer}>
       <div className={styles.imageContainer}>
-        <Image src={image.url} alt="" objectFit="cover" layout="fill" />
+        <Image
+          src={image.url}
+          alt=""
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+        />
       </div>
       <div className={styles.contentCol}>
         <RichText

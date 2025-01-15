@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Button, Quantity } from "@components/ui";
 import { CartContext } from "@context/CartContext";
 import { useContext, useState } from "react";
@@ -35,7 +35,16 @@ const ProductInfo = ({ product }) => {
   return (
     <div className={styles.productInfoContainer}>
       <div className={styles.mainImageContainer}>
-        <Image src={product.mainImage.url} width={1080} height={1120} alt="" />
+        <Image
+          src={product.mainImage.url}
+          width={1080}
+          height={1120}
+          alt=""
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
+        />
       </div>
       <div className={styles.productContentContainer}>
         {product.isNew && (

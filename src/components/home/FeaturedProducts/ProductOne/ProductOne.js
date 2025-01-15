@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Card, StyledLink } from "@components/ui";
 import styles from "./ProductOne.module.scss";
 
@@ -12,6 +12,10 @@ const ProductOne = () => {
             width={756}
             height={918}
             alt=""
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
       </div>
