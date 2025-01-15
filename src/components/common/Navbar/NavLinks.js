@@ -25,9 +25,7 @@ const NavLinks = ({ className }) => (
   <ul className={className}>
     {links.map((link) => (
       <li className={styles.navLink} key={link.name}>
-        <Link href={link.slug}>
-          <a>{link.name}</a>
-        </Link>
+        <Link href={link.slug}>{link.name}</Link>
       </li>
     ))}
   </ul>

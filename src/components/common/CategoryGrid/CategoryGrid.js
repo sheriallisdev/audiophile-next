@@ -17,10 +17,11 @@ const CategoryGrid = ({ categories, ...props }) => {
                 <Image src={category.image.url} alt="" layout={"fill"} />
               </div>
               <span className={styles.categoryTitle}>{category.name}</span>
-              <Link href={`/category/${category.slug}`}>
-                <a className={styles.categoryLink}>
-                  Shop <ArrowRight className={styles.icon} />
-                </a>
+              <Link
+                href={`/category/${category.slug}`}
+                className={styles.categoryLink}
+              >
+                Shop <ArrowRight className={styles.icon} />
               </Link>
             </div>
           </div>
