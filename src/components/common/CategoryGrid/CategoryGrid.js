@@ -14,13 +14,21 @@ const CategoryGrid = ({ categories, ...props }) => {
           <div className={styles.categoryCard} key={category.name}>
             <div className={styles.cardContent}>
               <div className={styles.imageContainer}>
-                <Image src={category.image.url} alt="" layout={"fill"} />
+                <Image
+                  src={category.image.url}
+                  alt=""
+                  fill
+                  style={{
+                    maxWidth: "100%",
+                  }}
+                />
               </div>
               <span className={styles.categoryTitle}>{category.name}</span>
-              <Link href={`/category/${category.slug}`}>
-                <a className={styles.categoryLink}>
-                  Shop <ArrowRight className={styles.icon} />
-                </a>
+              <Link
+                href={`/category/${category.slug}`}
+                className={styles.categoryLink}
+              >
+                Shop <ArrowRight className={styles.icon} />
               </Link>
             </div>
           </div>

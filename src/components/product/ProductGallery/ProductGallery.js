@@ -9,10 +9,13 @@ const ProductGallery = ({ imageGallery }) => {
           <Image
             key={index}
             src={image.url}
-            layout="fill"
-            objectFit="cover"
             alt=""
             className={styles.galleryImage}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
           />
         </div>
       ))}

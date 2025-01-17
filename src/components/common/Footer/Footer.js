@@ -25,20 +25,26 @@ const Footer = () => {
           Copyright {currentYear}. All Rights Reserved
         </p>
         <div className={styles.socialsContainer}>
-          <Link href="/">
-            <a className={styles.socialLink} aria-label="Visit us on Facebook">
-              <Facebook className={styles.icon} />
-            </a>
+          <Link
+            href="/"
+            className={styles.socialLink}
+            aria-label="Visit us on Facebook"
+          >
+            <Facebook className={styles.icon} />
           </Link>
-          <Link href="/">
-            <a className={styles.socialLink} aria-label="Visit us on Twitter">
-              <Twitter className={styles.icon} />
-            </a>
+          <Link
+            href="/"
+            className={styles.socialLink}
+            aria-label="Visit us on Twitter"
+          >
+            <Twitter className={styles.icon} />
           </Link>
-          <Link href="/">
-            <a className={styles.socialLink} aria-label="Visit us on Instagram">
-              <Instagram className={styles.icon} />
-            </a>
+          <Link
+            href="/"
+            className={styles.socialLink}
+            aria-label="Visit us on Instagram"
+          >
+            <Instagram className={styles.icon} />
           </Link>
         </div>
       </Container>

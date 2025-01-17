@@ -53,10 +53,8 @@ const Navbar = () => {
           <button className={styles.hamburgerMenu} onClick={handleMenuOpen}>
             <Hamburger />
           </button>
-          <Link href="/">
-            <a className={styles.logo}>
-              <Logo />
-            </a>
+          <Link href="/" className={styles.logo}>
+            <Logo />
           </Link>
           <nav className={styles.nav}>
             <ul className={styles.mainNav}>

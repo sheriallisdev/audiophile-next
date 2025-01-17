@@ -9,7 +9,15 @@ const About = ({ info }) => {
   return (
     <Container className={styles.aboutContainer}>
       <div className={styles.imageContainer}>
-        <Image src={image.url} alt="" objectFit="cover" layout="fill" />
+        <Image
+          src={image.url}
+          alt=""
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+          }}
+        />
       </div>
       <div className={styles.contentCol}>
         <RichText

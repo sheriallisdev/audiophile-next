@@ -15,9 +15,12 @@ const RelatedProducts = ({ otherProducts }) => {
               <div className={styles.imageContainer}>
                 <Image
                   src={product.mainImage.url}
-                  layout="fill"
-                  objectFit="contain"
                   alt=""
+                  fill
+                  sizes="100vw"
+                  style={{
+                    objectFit: "contain",
+                  }}
                 />
               </div>
               <h4 className={styles.productName}>{product.name}</h4>
