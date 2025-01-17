@@ -11,27 +11,27 @@
     "pre-commit": "npm run lint"
   },
   "dependencies": {
-    "@badrap/bar-of-progress": "^0.1.2",
-    "@graphcms/rich-text-react-renderer": "^0.3.0",
-    "@headlessui/react": "^1.7.4",
-    "formik": "^2.2.9",
-    "graphql": "^15.5.3",
-    "graphql-request": "^3.5.0",
-    "next": "^14.2.23",
-    "next-seo": "^4.28.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-toastify": "^9.1.1",
-    "sass": "^1.39.0",
-    "yup": "^0.32.11"
+    "@badrap/bar-of-progress": "^0.2.2",
+    "@graphcms/rich-text-react-renderer": "^0.6.2",
+    "@headlessui/react": "^2.2.0",
+    "formik": "^2.4.6",
+    "graphql": "^16.10.0",
+    "graphql-request": "^7.1.2",
+    "next": "^15.1.5",
+    "next-seo": "^6.6.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.3",
+    "sass": "^1.83.4",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "^14.2.23",
-    "eslint-config-prettier": "^8.3.0",
-    "husky": "^7.0.2",
-    "lint-staged": "^11.1.2",
-    "prettier": "2.3.2"
+    "eslint": "9.18.0",
+    "eslint-config-next": "^15.1.5",
+    "eslint-config-prettier": "^10.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.1",
+    "prettier": "3.4.2"
   },
   "lint-staged": {
     "*.js": [
