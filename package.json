@@ -17,7 +17,7 @@
     "formik": "^2.2.9",
     "graphql": "^15.5.3",
     "graphql-request": "^3.5.0",
-    "next": "^13.5.8",
+    "next": "^14.2.23",
     "next-seo": "^4.28.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-next": "^13.5.8",
+    "eslint-config-next": "^14.2.23",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
